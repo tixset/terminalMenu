@@ -91,25 +91,6 @@ void setup() {
       tMenu.add(LMEMROM, "free", tGetROM);
   tMenu.add("reboot", tReboot);
 
-
-
-
-  //tMenu.genHelpList();
-	//tMenu.ed("test1-AAA",0);
-	//tMenu.del(2);
- 
-	//Serial.println(tMenu.goMenu("system serial-speed get", -1));
-  //Serial.println(tMenu.goMenu("system serial-speed get test", -1));
-
-  //Serial.println(tMenu.goMenu("?", -1));
-  //Serial.println("---");
-  //Serial.println(tMenu.goMenu("system serial-speed", -1));
-  //Serial.println("---");
-  //Serial.println(tMenu.goMenu("", -1));
-
-
-
-
   wifiConnect();
 }
 
