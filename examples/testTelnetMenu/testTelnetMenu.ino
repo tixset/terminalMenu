@@ -76,7 +76,7 @@ void setup() {
       tMenu.add(LIPDNS2, "get", tGetIpDns2);
   byte LHostname = tMenu.add("hostname");
     tMenu.add(LHostname, "get", tGetHostname);
-	tMenu.add("uptime", tGetUptime);
+  tMenu.add("uptime", tGetUptime);
   byte LCHIP = tMenu.add("chip");
     tMenu.add(LCHIP, "type", tGetChipType);
     byte LCHIPFreq = tMenu.add(LCHIP, "freq");
