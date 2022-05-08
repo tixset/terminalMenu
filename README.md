@@ -78,6 +78,9 @@ esp-test-telnet-menu:1# chip freq get
 
 Также класс "terminalMenu" помимо функций, имеет еще и переменную "MenuCount" в которой хранится количество добавленных элементов меню.
 
+### Скрин окошка терминала:
+<img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-putty.jpg">
+
 # Terminal menu for esp32 and esp8266 controllers
 
 When developing a command interface for device management, at some point you face the problem of a huge mountain of conditions in the code, which often leads to the inconvenience of its maintenance.
@@ -157,3 +160,6 @@ String getHelpLine(int index, int sub);
 I wrote about the help function at the very beginning. I will clarify here that if you specify the id of an element in the "sub" parameter in this function, the function will return help lines for this element, and if you do not specify it, then help lines for the root of the menu will return.
 
 Also, the "terminalMenu" class, in addition to functions, also has a variable "MenuCount" in which the number of added menu items is stored.
+
+### Screen of the terminal window:
+<img alt="text, terminal Man" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-putty.jpg">
