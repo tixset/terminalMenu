@@ -30,7 +30,8 @@ class terminalMenu {
 		int add(int sub, String name, func Func);
  
 		void ed(int index, String name);
-		void ed(int index, String name, int sub);
+		void ed(int index, int sub);
+		void ed(int index, func Func);
 		void del(int index);
 	
 		int goMenu(String line, int clientIndex);
@@ -138,6 +139,14 @@ int terminalMenu::add(int sub, String name, func Func){
 
 void terminalMenu::ed(int index, String name){
 	_mLines[index].name = name;
+}
+
+void terminalMenu::ed(int index, int sub){
+	_mLines[index].sub = sub;
+}
+
+void terminalMenu::ed(int index, func Func){
+	_mLines[index].Func = Func;
 }
 
 void terminalMenu::ed(int index, String name, int sub){
