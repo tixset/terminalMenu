@@ -25,43 +25,43 @@ void tRootHelp(tfuncParams Params) {
 Далее приведу список функций класса "terminalMenu", а так же их назначение.
 ### Инициализация библиотеки:
 ```c++
-		void init(tmenuLines* mLines, int mSize);
-		void init(tmenuLines* mLines, int mSize, bool helpSubsEn);
+void init(tmenuLines* mLines, int mSize);
+void init(tmenuLines* mLines, int mSize, bool helpSubsEn);
 ```
 В эту функцию передается основной массив меню и его размер, а так же есть возможность указать флаг который отключает вывод подпунктов меню в квадратных скобках, при вызове помощи.
 ### Привязка функций помощи и сообщения об ошибке:
 ```c++
-		void helpAttach(func Func);
-		void errAttach(func Func);
+void helpAttach(func Func);
+void errAttach(func Func);
 ```
 Про функцию помощи я уже написал ранее, а функция сообщения об ошибке нужна для вывода ошибки если пользователь неверно указал пункт меню. При этом если к предыдущему пункту меню привязана функция, то передаваемое следом значение считается параметром и передается внутрь функции.
 ### Добавление пунктов меню
 ```c++
-		int add(String name);
-		int add(String name, func Func);
-		int add(int sub, String name);
-		int add(int sub, String name, func Func);
+int add(String name);
+int add(String name, func Func);
+int add(int sub, String name);
+int add(int sub, String name, func Func);
 ```
 При добавлении пункта меню указывается его название и функция которая будет выполняться при его вызове, если функцию не указать то к пункту меню автоматически привяжется функция помощи. Функция "add" при выполении возвращает id добавленного пункта меню, а указав этот id в качестве параметра "sub" следующего пункта меню можно вложить один пункт в другой.
 
 <details> 
-  <summary>Структуру меню из примера "testTelnetMenu.ino" можно увидеть под этим спойлером.</summary>
-   <img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-menu-tree.jpg">
+<summary>Структуру меню из примера "testTelnetMenu.ino" можно увидеть под этим спойлером.</summary>
+<img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-menu-tree.jpg">
 </details>
 
 ### Редактирование и удаление пунктов меню
 ```c++
-		void ed(int index, String name);
-		void ed(int index, int sub);
-		void ed(int index, func Func);
-		void del(int index);
+void ed(int index, String name);
+void ed(int index, int sub);
+void ed(int index, func Func);
+void del(int index);
 ```
 Как я писал ранее, библиотека поддерживает редактирование пунктов меню в процессе работы программы (переименование, перемещение, привязка другой функции и удаление).
 Если с редактированием все и так очевидно, то про удаление напишу чуть подробнее.
 При вызове функции удпления пункта меню в функцию передается только порядковый номер этого пункта (id), при этом функция фактически не удаляет выбранный пункт, а только стирает его имя, что скрывает его из меню. При желании его так же легко можно восстановить обратно задав ему имя снова с помощью функции редактирования.
 ### Вызов функции из меню
 ```c++
-		int goMenu(String line, int clientIndex);
+int goMenu(String line, int clientIndex);
 ```
 Для вызова функции из меню мы передаем в функцию "goMenu" строку - адрес пункста меню, строка эта выглядит например так: "chip freq get". Так же в эту функцию мы передаем "clientIndex" для обратной связи с клиентом.
 
@@ -72,8 +72,8 @@ esp-test-telnet-menu:1# chip freq get
 ```
 ### Функции помощи
 ```c++
-		String getHelpLine(int index);
-		String getHelpLine(int index, int sub);
+String getHelpLine(int index);
+String getHelpLine(int index, int sub);
 ```
 Про функцию помоши я писал в самом начале. Уточню тут что если в этой функции в параметре "sub" указать id элемента, то функция вернет строки помощи по этому элементу, а если не указывать, то вернутся строки помощи по корню меню.
 
@@ -95,13 +95,13 @@ The library allows you to conveniently edit the menu during development without 
 The library automatically generates a simple help on menu punts, you can get it for example like this:
 ```c++
 void tRootHelp(tfuncParams Params) {
-int x = 0;
-while (1) {
-String line = tMenu.getHelpLine(x);
-if (line == "") break;
-telnetSend(line, Params.clientIndex);
-x++;
-}
+  int x = 0;
+  while (1) {
+    String line = tMenu.getHelpLine(x);
+    if (line == "") break;
+    telnetSend(line, Params.clientIndex);
+    x++;
+  }
 }
 ```
 The use of this code is present in the example "testTelnetMenu.ino".
