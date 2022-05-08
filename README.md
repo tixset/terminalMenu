@@ -48,6 +48,7 @@ void tRootHelp(tfuncParams Params) {
   <summary>Структуру меню из примера "testTelnetMenu.ino" можно увидеть под этим спойлером.</summary>
    <img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-menu-tree.jpg">
 </details>
+
 ### Редактирование и удаление пунктов меню
 ```c++
 		void ed(int index, String name);
@@ -131,6 +132,7 @@ When adding a menu item, its name and the function that will be performed when i
 <summary>The menu structure from the example "testTelnetMenu.ino" can be seen under this spoiler.</summary>
 <img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-menu-tree.jpg">
 </details>
+
 ### Edit and delete menu items
 ```c++
 void ed(int index, String name);
