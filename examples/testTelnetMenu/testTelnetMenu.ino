@@ -36,21 +36,21 @@ bool onWifiConnect;
 String inString;
 
 void setup() {
-	Serial.begin(SERIAL_SPEED);
+  Serial.begin(SERIAL_SPEED);
 
-	tMenu.init((tmenuLines*)tLines, sizeof(tLines) / sizeof(tLines[0]));
+  tMenu.init((tmenuLines*)tLines, sizeof(tLines) / sizeof(tLines[0]));
   tMenu.helpAttach(tGetHelp);
   tMenu.errAttach(tGetErr);
   
-	tMenu.add("?|help", tRootHelp);
-	byte LId = tMenu.add("id");
+  tMenu.add("?|help", tRootHelp);
+  byte LId = tMenu.add("id");
     tMenu.add(LId, "get", tGetId);
-	byte LSystem = tMenu.add("system");
+  byte LSystem = tMenu.add("system");
     byte LSerialSpeed = tMenu.add(LSystem, "serial-speed");
       tMenu.add(LSerialSpeed, "get", tGetSerialSpeed);
     byte LTelnetPort = tMenu.add(LSystem, "telnet-port");
       tMenu.add(LTelnetPort, "get", tGetTelnetPort);
-	byte LWiFi = tMenu.add("wifi");
+  byte LWiFi = tMenu.add("wifi");
     byte LWiFiMode = tMenu.add(LWiFi, "mode");
       tMenu.add(LWiFiMode, "get", tGetWifiMode);
     byte LWiFiSSID = tMenu.add(LWiFi, "ssid");
@@ -62,7 +62,7 @@ void setup() {
     byte LWiFiChannel = tMenu.add(LWiFi, "channel");
       tMenu.add(LWiFiChannel, "get", tGetWifiChannel);
     tMenu.add(LWiFi, "reconnect", tWifiReConnect);
-	byte LIP = tMenu.add("ip");
+  byte LIP = tMenu.add("ip");
     tMenu.add(LIP, "mac", tGetMac);
     byte LIPIP = tMenu.add(LIP, "ip");
       tMenu.add(LIPIP, "get", tGetIpIp);
