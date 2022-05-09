@@ -44,6 +44,8 @@ int add(int sub, String name, func Func);
 ```
 При добавлении пункта меню указывается его название и функция которая будет выполняться при его вызове, если функцию не указать то к пункту меню автоматически привяжется функция помощи. Функция "add" при выполнении возвращает id добавленного пункта меню, а указав этот id в качестве параметра "sub" следующего пункта меню можно вложить один пункт в другой.
 
+Так же в названии пункта меню можно указать несколько слов разделенных прямой вертикальной чертой, в этом случае данный пункт меню будет вызываться по любому из перечисленных слов.
+
 <details> 
 <summary>Структуру меню из примера "testTelnetMenu.ino" можно увидеть под этим спойлером.</summary>
 <img alt="tixset, terminalMenu" src="https://github.com/tixset/terminalMenu/raw/main/screenshots/testTelnetMenu-menu-tree.jpg">
@@ -139,6 +141,8 @@ int add(int sub, String name);
 int add(int sub, String name, func Func);
 ```
 When adding a menu item, its name and the function that will be performed when it is called are indicated, if the function is not specified, the help function will automatically be linked to the menu item. The "add" function returns the id of the added menu item when executed, and by specifying this id as the "sub" parameter of the next menu item, you can nest one item into another.
+
+Also, in the name of the menu item, you can specify several words separated by a straight vertical line, in which case this menu item will be called by any of the listed words.
 
 <details> 
 <summary>The menu structure from the example "testTelnetMenu.ino" can be seen under this spoiler.</summary>
