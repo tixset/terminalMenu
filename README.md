@@ -4,9 +4,9 @@
 
 Для упрощения этого процесса я разработал небольшую библиотеку — конструктор терминального меню, предназначенную для контроллеров esp32 и esp8266.
 
-В примере "testTelnetMenu.ino" показано использование данной библиотеки на примере протокола telnet, но использовать ее можно не только в telnet, но и например при общении с контроллером по последовательному интерфейсу.
+В примере "testTelnetMenu.ino" показано использование данной библиотеки на примере протокола telnet, однако использовать ее можно не только в telnet, но и например при общении с контроллером по последовательному интерфейсу.
 
-Библиотека позволяет удобно редактировать меню в процессе разработки без потери его структуры. Так же она поддерживает редактирование пунктов меню в процессе работы программы (переименование, перемещение, привязка другой функции и удаление).
+Библиотека позволяет удобно работать с меню в процессе разработки без потери его структуры. Так же она поддерживает редактирование пунктов меню в процессе работы программы (переименование, перемещение, привязка другой функции и удаление).
 
 Библиотека автоматически генерирует простую справку (помощь) по пунктам меню, получить ее можно например вот так:
 ```c++
@@ -102,9 +102,9 @@ When developing a command interface for device management, at some point you fac
 
 To simplify this process, I have developed a small terminal menu constructor library designed for esp32 and esp8266 controllers.
 
-The example "testTelnetMenu.ino" shows the use of this library on the example of the telnet protocol, but it can be used not only in telnet, but also, for example, when communicating with the controller via the serial interface.
+The example "testTelnetMenu.ino" shows the use of this library on the example of the telnet protocol, however, it can be used not only in telnet, but also, for example, when communicating with a controller via a serial interface.
 
-The library allows you to conveniently edit the menu during development without losing its structure. It also supports editing menu items during the program (renaming, moving, linking another function and deleting).
+The library makes it convenient to work with the menu during development without losing its structure. It also supports editing menu items while the program is running (renaming, moving, linking another function and deleting).
 
 The library automatically generates a simple help (help) for the menu items, you can get it for example like this:
 ```c++
