@@ -32,6 +32,7 @@ class terminalMenu {
 		void ed(int index, String name);
 		void ed(int index, int sub);
 		void ed(int index, func Func);
+		void ed(int index, String name, int sub);
 		void del(int index);
 	
 		int goMenu(String line, int clientIndex);
